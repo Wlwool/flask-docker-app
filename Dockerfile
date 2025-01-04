@@ -9,7 +9,7 @@ COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копируем исходный код
-COPY . .
+COPY flask_app/ /app/
 
 # Указываем порт, который будет открыт
 EXPOSE 5000
