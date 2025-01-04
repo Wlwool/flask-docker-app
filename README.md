@@ -28,6 +28,14 @@ git clone https://github.com/Welzewool/flask-docker-app.git
 cd flask-docker-app
 ```
 
+## Создание виртуального окружения
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Для Linux/MacOS
+venv\Scripts\activate     # Для Windows
+```
+
+pip install -r requirements.txt
 
 ### 2.Сборка Docker-образа
 Соберите Docker-образ для приложения Flask:
@@ -105,6 +113,11 @@ http://localhost:5000
 ```bash
 docker-compose down
 ```
+
+```commandline
+http://localhost:5000
+```
+
 
 ---
 
