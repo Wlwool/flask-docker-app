@@ -35,7 +35,10 @@ source venv/bin/activate  # Для Linux/MacOS
 venv\Scripts\activate     # Для Windows
 ```
 
+Зависимости
+```commandline
 pip install -r requirements.txt
+```
 
 ### 2.Сборка Docker-образа
 Соберите Docker-образ для приложения Flask:
@@ -55,6 +58,8 @@ docker run -d -p 5000:5000 --name flask-container flask-app
 Перейдите по адресу:
 http://localhost:5000
 Вы увидите сообщение: "Привет, Docker!"
+
+---
 
 ## Запуск на Windows 🖥️
 ### Шаг 1: Установка Docker Desktop
