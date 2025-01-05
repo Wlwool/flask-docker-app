@@ -42,11 +42,7 @@ def generate():
         use_symbols = "use_symbols" in request.args
 
         password = generate_password(length, use_upper, use_digits, use_symbols)
-        return f"""
-         <h1>Ваш сгенерированный пароль:</h1>
-        <p style="font-size: 24px; font-weight: bold;">{password}</p>
-        <a href="/">Сгенерировать новый пароль</a>
-        """
+        return render_template("password.html", password=password)
 
     except Exception as e:
         return f"Произошла ошибка: {str(e)}"
