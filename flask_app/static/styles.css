@@ -1,0 +1,83 @@
+/* Общий стиль для всей страницы */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Чёрный фон */
+    color: #ffffff; /* Белый текст */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Заголовок */
+header h1 {
+    margin: 20px 0;
+    font-size: 36px;
+    font-weight: bold;
+    color: #f39c12; /* Оранжевый для акцента */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Карточка */
+.card {
+    background-color: #1e1e1e; /* Тёмно-серый фон карточки */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Кнопки и вводы */
+form label, form input, form button {
+    display: block;
+    margin: 10px auto;
+    font-size: 16px;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+form input {
+    background-color: #333333;
+    color: white;
+}
+
+form button {
+    background-color: #f39c12;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e67e22; /* Более тёмный оранжевый при наведении */
+}
+
+/* Текст пароля */
+.password {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2ecc71; /* Зелёный цвет */
+    text-shadow: 0 0 5px rgba(46, 204, 113, 0.8);
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #3498db; /* Синий цвет ссылок */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
