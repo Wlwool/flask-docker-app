@@ -1,5 +1,5 @@
 import string
-from flask import Flask, request
+from flask import Flask, request, render_template
 import random
 
 
@@ -31,19 +31,7 @@ def generate_password(length_pass=12, use_upper=True, use_digits=True, use_symbo
 
 @app.route("/")
 def home():
-    return """
-    <h1>Генератор паролей</h1>
-    <form action="/generate" method="get">
-        <label for="length">Длина пароля:</label>
-        <input type="number" id="length" name="length" value="12" min="4"><br><br>
-        
-        <label><input type="checkbox" name="use_upper" checked> Включить заглавные буквы</label><br>
-        <label><input type="checkbox" name="use_digits" checked> Включить цифры</label><br>
-        <label><input type="checkbox" name="use_symbols" checked> Включить символы</label><br><br>
-        
-        <button type="submit">Сгенерировать</button>
-    </form>
-    """
+    return render_template("home.html")
 
 @app.route("/generate", methods=["GET"])
 def generate():
