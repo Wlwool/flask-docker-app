@@ -26,7 +26,7 @@ https://flask-docker-app-nhwy.onrender.com/
 Клонирование с GitHub:
 
 ```bash
-git clone https://github.com/Welzewool/flask-docker-app.git
+git clone https://github.com/Wlwool/flask-docker-app.git
 cd flask-docker-app
 ```
 
