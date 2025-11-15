@@ -29,6 +29,35 @@ def generate_password(length_pass=12, use_upper=True, use_digits=True, use_symbo
     random.shuffle(password)
     return "".join(password)
 
+
+def calculate_password_strength(password, use_upper, use_digits, use_symbols):
+    """Расчет сложности пароля (0-100)"""
+    score = 0
+    length = len(password)
+    
+    # Оценка по длине (максимум 40 баллов)
+    if length >= 16:
+        score += 40
+    elif length >= 12:
+        score += 30
+    elif length >= 8:
+        score += 20
+    else:
+        score += 10
+    
+    # Оценка по типам символов (максимум 60 баллов)
+    char_types = 1  # всегда есть строчные буквы
+    if use_upper:
+        char_types += 1
+    if use_digits:
+        char_types += 1
+    if use_symbols:
+        char_types += 1
+    
+    score += (char_types - 1) * 20  # 0, 20, 40, 60 баллов
+    
+    return min(score, 100)
+
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -42,11 +71,12 @@ def generate():
         use_symbols = "use_symbols" in request.args
 
         password = generate_password(length, use_upper, use_digits, use_symbols)
-        return render_template("password.html", password=password)
+        strength = calculate_password_strength(password, use_upper, use_digits, use_symbols)
+        return render_template("password.html", password=password, strength=strength)
 
     except Exception as e:
         return f"Произошла ошибка: {str(e)}"
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=True)
