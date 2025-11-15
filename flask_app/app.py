@@ -14,7 +14,7 @@ def generate_password(length_pass=12, use_upper=True, use_digits=True, use_symbo
     symbols = "!@#$%^&*()_+" if use_symbols else ""
 
     if not (lower or upper or digits or symbols):
-        return "Невозможно сгенерировать пароль с заданными параметрами."
+        return "[X] Невозможно сгенерировать пароль с заданными параметрами."
 
     all_chars = lower + upper + digits + symbols
     password = random.choices(all_chars, k=length_pass)
@@ -30,7 +30,7 @@ def generate_password(length_pass=12, use_upper=True, use_digits=True, use_symbo
     return "".join(password)
 
 
-def calculate_password_strength(password, use_upper, use_digits, use_symbols):
+def calculate_password_strength(password, use_upper, use_digits, use_symbols) -> int:
     """Расчет сложности пароля (0-100)"""
     score = 0
     length = len(password)
