@@ -6,7 +6,7 @@ import random
 app = Flask(__name__)
 
 
-def generate_password(length_pass=12, use_upper=True, use_digits=True, use_symbols=True):
+def generate_password(length_pass: int=12, use_upper: bool=True, use_digits: bool=True, use_symbols:bool=True) -> str:
     """Генерация безопасного пароля с указанными параметрами"""
     lower = string.ascii_lowercase
     upper = string.ascii_uppercase if use_upper else ""
@@ -30,7 +30,7 @@ def generate_password(length_pass=12, use_upper=True, use_digits=True, use_symbo
     return "".join(password)
 
 
-def calculate_password_strength(password, use_upper, use_digits, use_symbols) -> int:
+def calculate_password_strength(password: str, use_upper: bool, use_digits: bool, use_symbols: bool) -> int:
     """Расчет сложности пароля (0-100)"""
     score = 0
     length = len(password)
